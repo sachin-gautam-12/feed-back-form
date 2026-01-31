@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Feedback Form | Academic Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="form-header">
+      <div class="header-content">
+        <h1><i class="fas fa-graduation-cap"></i> Student Feedback Form</h1>
+        <p>Please fill out this form to submit your query or feedback. All fields marked with <span class="required">*</span> are required.</p>
+      </div>
+      <div class="university-badge">
+        <img src="logo-image (1).jpeg" alt="University Logo">
+        <p>Academic Services Portal</p>
+      </div>
+    </header>
+
+    <!-- Main Form -->
+    <main class="form-wrapper">
+      <form id="studentForm" class="student-form">
+        <!-- Personal Details Section -->
+        <section class="form-section">
+          <div class="section-header">
+            <h2><i class="fas fa-user-graduate"></i> Student Information</h2>
+            <p>Please provide your basic details</p>
+          </div>
+
+          <div class="form-group">
+            <label for="name">
+              Full Name <span class="required">*</span>
+              <span class="hint">(As per university records)</span>
+            </label>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="error-message" id="nameError"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="studentId">
+                Student ID <span class="required">*</span>
+                <span class="hint">(e.g., 12345678)</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fas fa-id-card"></i>
+                <input type="text" id="studentId" name="studentId" placeholder="Enter your student ID" required>
+              </div>
+              <div class="error-message" id="studentIdError"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                University Email <span class="required">*</span>
+                <span class="hint">(e.g., name@lpu.in)</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
+              <div class="error-message" id="emailError"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mobile">
+                Mobile Number <span class="required">*</span>
+                <span class="hint">(10-digit number)</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+              </div>
+              <div class="error-message" id="mobileError"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="course">
+                Course/Program <span class="required">*</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fas fa-book"></i>
+                <select id="course" name="course" required>
+                  <option value="" disabled selected>Select your course</option>
+                  <option value="btech-cs">B.Tech Computer Science</option>
+                  <option value="btech-it">B.Tech Information Technology</option>
+                  <option value="bca">BCA</option>
+                  <option value="mca">MCA</option>
+                  <option value="mtech">M.Tech</option>
+                  <option value="mba">MBA</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="error-message" id="courseError"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="year">
+                Year of Study <span class="required">*</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fas fa-calendar-alt"></i>
+                <select id="year" name="year" required>
+                  <option value="" disabled selected>Select year</option>
+                  <option value="1">First Year</option>
+                  <option value="2">Second Year</option>
+                  <option value="3">Third Year</option>
+                  <option value="4">Fourth Year</option>
+                  <option value="5">Fifth Year</option>
+                </select>
+              </div>
+              <div class="error-message" id="yearError"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">
+                Subject/Department <span class="required">*</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fas fa-building"></i>
+                <input type="text" id="subject" name="subject" placeholder="e.g., Computer Science Department" required>
+              </div>
+              <div class="error-message" id="subjectError"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Query Section -->
+        <section class="form-section">
+          <div class="section-header">
+            <h2><i class="fas fa-question-circle"></i> Query / Feedback</h2>
+            <p>Please describe your query or feedback in detail</p>
+          </div>
+
+          <div class="form-group">
+            <label for="queryType">
+              Query Type <span class="required">*</span>
+            </label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="academic" name="queryType" value="Academic" required>
+                <label for="academic">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span>Academic</span>
+                  <p class="option-desc">Related to courses, exams, grades</p>
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="administrative" name="queryType" value="Administrative">
+                <label for="administrative">
+                  <i class="fas fa-file-alt"></i>
+                  <span>Administrative</span>
+                  <p class="option-desc">Documents, certificates, fees</p>
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="technical" name="queryType" value="Technical">
+                <label for="technical">
+                  <i class="fas fa-laptop-code"></i>
+                  <span>Technical</span>
+                  <p class="option-desc">Lab facilities, software, portal issues</p>
+                </label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="feedback" name="queryType" value="Feedback">
+                <label for="feedback">
+                  <i class="fas fa-comment-dots"></i>
+                  <span>General Feedback</span>
+                  <p class="option-desc">Suggestions, improvements, comments</p>
+                </label>
+              </div>
+            </div>
+            <div class="error-message" id="queryTypeError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="urgency">
+              Urgency Level
+            </label>
+            <div class="slider-container">
+              <div class="urgency-labels">
+                <span>Low</span>
+                <span>Medium</span>
+                <span>High</span>
+                <span>Critical</span>
+              </div>
+              <input type="range" id="urgency" name="urgency" min="1" max="4" value="2" class="urgency-slider">
+              <div class="slider-ticks">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              Detailed Message <span class="required">*</span>
+              <span class="hint">(Please provide specific details)</span>
+            </label>
+            <div class="textarea-with-icon">
+              <i class="fas fa-edit"></i>
+              <textarea id="message" name="message" rows="5" placeholder="Please describe your query or feedback in detail. Include any relevant course codes, professor names, or specific issues." required></textarea>
+            </div>
+            <div class="char-count">
+              <span id="charCount">0</span> / 500 characters
+            </div>
+            <div class="error-message" id="messageError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="attachment">
+              Attachment (Optional)
+              <span class="hint">(You can upload supporting documents, max 5MB)</span>
+            </label>
+            <div class="file-upload">
+              <i class="fas fa-paperclip"></i>
+              <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
+              <label for="attachment" class="file-label">
+                <span id="fileName">Choose file</span>
+                <span class="browse-btn">Browse</span>
+              </label>
+            </div>
+            <div class="file-hint">
+              <i class="fas fa-info-circle"></i>
+              Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 5MB)
+            </div>
+          </div>
+        </section>
+
+        <!-- Submit Section -->
+        <section class="form-section submit-section">
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+              I confirm that the information provided is accurate to the best of my knowledge and I authorize the university to use this information for academic purposes.
+              <span class="required">*</span>
+            </label>
+            <div class="error-message" id="consentError"></div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="clearBtn" class="btn btn-secondary">
+              <i class="fas fa-eraser"></i> Clear Form
+            </button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Submit Form
+            </button>
+            <div class="submit-hint">
+              <i class="fas fa-clock"></i>
+              You'll receive a confirmation email within 24 hours
+            </div>
+          </div>
+        </section>
+      </form>
+
+      <!-- Submitted Data Display -->
+      <div id="submittedData" class="submitted-data">
+        <div class="data-header">
+          <h2><i class="fas fa-check-circle"></i> Form Submitted Successfully!</h2>
+          <p>Your form has been submitted. Here are the details you provided:</p>
+          <div class="submission-time">
+            <i class="fas fa-calendar-check"></i>
+            Submitted on: <span id="submissionDate">--</span> at <span id="submissionTime">--</span>
+            | Reference ID: <span id="referenceId">--</span>
+          </div>
+        </div>
+
+        <div class="data-container">
+          <div class="data-section">
+            <h3><i class="fas fa-user-graduate"></i> Student Details</h3>
+            <div class="data-grid">
+              <div class="data-item">
+                <span class="data-label">Full Name:</span>
+                <span class="data-value" id="displayName">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Student ID:</span>
+                <span class="data-value" id="displayStudentId">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Email:</span>
+                <span class="data-value" id="displayEmail">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Mobile:</span>
+                <span class="data-value" id="displayMobile">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Course:</span>
+                <span class="data-value" id="displayCourse">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Year of Study:</span>
+                <span class="data-value" id="displayYear">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Subject/Department:</span>
+                <span class="data-value" id="displaySubject">--</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="data-section">
+            <h3><i class="fas fa-question-circle"></i> Query Details</h3>
+            <div class="data-grid">
+              <div class="data-item">
+                <span class="data-label">Query Type:</span>
+                <span class="data-value" id="displayQueryType">--</span>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Urgency Level:</span>
+                <span class="data-value" id="displayUrgency">--</span>
+              </div>
+              <div class="data-item full-width">
+                <span class="data-label">Message:</span>
+                <div class="data-value message-content" id="displayMessage">--</div>
+              </div>
+              <div class="data-item">
+                <span class="data-label">Attachment:</span>
+                <span class="data-value" id="displayAttachment">No file attached</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="data-actions">
+            <button type="button" id="printBtn" class="btn btn-secondary">
+              <i class="fas fa-print"></i> Print Summary
+            </button>
+            <button type="button" id="newFormBtn" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Submit Another Form
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="form-footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3><i class="fas fa-university"></i> Academic Services Portal</h3>
+          <p>Lovely Professional University | Student Support System</p>
+          <p>For urgent queries, contact: studenthelp@lpu.edu.in | Phone: +91-1234-567890</p>
+        </div>
+        <div class="footer-links">
+          <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2023 Student Feedback System. All rights reserved. | This form is designed for academic purposes only.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script3.js"></script>
+</body>
+</html>
