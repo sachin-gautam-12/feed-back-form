@@ -25,11 +25,10 @@ A simple **Feedback Form** built with **HTML, CSS, and JavaScript** to collect u
 ## 📸 Screenshots
 
 ### 🔹 Feedback Form UI
-![Feedback Form UI](<img width="410" height="812" alt="Screenshot 2026-01-31 100227" src="https://github.com/user-attachments/assets/55d84f41-76b7-43bc-b1f2-2e1db6285504" />
-)
+![Feedback Form UI](Screenshot.png)
 
 ### 🔹 After Form Submission
-![Form Submission](<img width="410" height="812" alt="Screenshot 2026-01-31 100227" src="https://github.com/user-attachments/assets/06cb8d81-7970-4398-98d7-202f7291f4e7" />
+![Form Submission](Screenshot.png>
 )
 
 > 📌 **Note:**  
